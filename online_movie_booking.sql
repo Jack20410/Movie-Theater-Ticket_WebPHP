@@ -38,9 +38,9 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`id`, `img_path`, `alt`) VALUES
-(1, '/webfinal/assets/images/Carousel/carousel1.jpeg', 'first page'),
-(2, '/webfinal/assets/images/Carousel/carousel2.jpg', 'second page'),
-(3, '/webfinal/assets/images/Carousel/doraemon.jpg', 'third page');
+(1, '/images/carousel/1.jpg', 'first page'),
+(2, '/images/carousel/2.jpg', 'second page'),
+(3, '/images/carousel/3.jpg', 'third page');
 
 -- --------------------------------------------------------
 

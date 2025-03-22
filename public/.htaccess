@@ -1,0 +1,25 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Set the base for rewrites
+RewriteBase /Movie-Theater-Ticket_WebPHP/public/
+
+# Allow direct access to actual files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Forward all other requests to index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Set PHP error reporting
+php_flag display_errors on
+php_value error_reporting E_ALL
+
+# Handle Authorization Header
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Allow CORS
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type" 

@@ -1,7 +1,4 @@
-<?php
-require_once('../resources/film_db.php');
-$film_available = get_products();
-?>
+
 <!-- Now showing start -->
 <div class="container">
         <!-- Now showing title -->

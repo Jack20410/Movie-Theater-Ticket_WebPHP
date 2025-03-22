@@ -1,0 +1,26 @@
+RewriteEngine On
+
+# Enable following symlinks
+Options +FollowSymLinks
+
+# Allow access to all files
+<Files *>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Handle Authorization Header
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+
+# Redirect all requests to index.php except for existing files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Set default character set
+AddDefaultCharset UTF-8
+
+# Enable error reporting for debugging
+php_value display_errors On
+php_value display_startup_errors On
+php_value error_reporting E_ALL 
